@@ -1,0 +1,67 @@
+# -------------------------
+# VS Code settings
+# -------------------------
+.vscode/
+*.code-workspace
+
+# -------------------------
+# OS-specific files
+# -------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# -------------------------
+# Node.js / npm (if used for tooling)
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------
+# Build / Dist outputs
+# -------------------------
+dist/
+build/
+tmp/
+temp/
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# -------------------------
+# Coverage / Testing
+# -------------------------
+coverage/
+*.lcov
+
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+.env.local
+.env.*.local
+
+# -------------------------
+# Misc
+# -------------------------
+*.swp
+*.swo
+*.bak
+*.tmp
