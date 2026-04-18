@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>target</title>
+  </head>
+  <body>
+    <!-- the target attribute directs if the page has to be opned in the same tab / window or new one -->
+    <!-- 4 possible values 
+        1. _blank (opens the link in a new page)
+        2. _self (default value if ignored) (opens the link on same window / tab)
+        
+        there are 2 more options used / applied with iframes
+        3. _parent
+        4. _top
+     -->
+
+    <!-- loading the page on same window / tab (default) -->
+    <a href="welcome.html">Welcome</a><br />
+    <a href="welcome.html" target="_self">Welcome with target self</a><br />
+
+    <!-- loading the page on new window / tab (default) -->
+    <a href="welcome.html" target="_blank">welcome on new page</a>
+  </body>
+</html>
