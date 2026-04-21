@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- demo of available input types -->
+
+    <form action="">
+      <!-- text input -->
+      <label for="tt">Text Type:</label>
+      <input type="text" id="tt" />
+
+      <br />
+
+      <!-- password type -->
+      <label for="pp">Password Type</label>
+      <input type="password" id="pp" />
+
+      <br />
+
+      <!-- Number type -->
+      <label for="nn">Number Type</label>
+      <input type="number" id="nn" />
+
+      <br />
+
+      <!-- radio button type 
+      The use can choose only one option from the available list 
+      the name attribute for all the elements has to be the same value
+      -->
+      <h2>Select Subcription Type</h2>
+      <input type="radio" name="stype" id="free" value="free" />
+      <label for="free">Free</label>
+
+      <br />
+
+      <input type="radio" name="stype" id="month" value="monthly" />
+      <label for="month">Monthly</label>
+
+      <br />
+
+      <input type="radio" name="stype" id="year" value="yearly" />
+      <label for="year">Yearly</label>
+
+      <!-- checkbox type -->
+      <h2>Select the Skills</h2>
+      <input type="checkbox" name="skill" id="html" value="html" />
+      <label for="html">HTML</label>
+      <input type="checkbox" name="skill" id="css" value="css" />
+      <label for="css">CSS</label>
+      <input type="checkbox" name="skill" id="js" value="js" />
+      <label for="js">JavaScript</label>
+
+      <br />
+      <label for="fav">Favorite Color:</label>
+      <input type="color" name="" id="fav" />
+
+      <br />
+      <label for="dt">Select Date of birth:</label>
+      <input type="date" name="" id="dt" />
+
+      <br />
+      <label for="file">File progress:</label>
+      <progress value="25" max="100" id="file"></progress>
+
+      <br />
+      <label for="count">Range Input</label>
+      <input type="range" name="" id="count" min="1" max="100" />
+
+      <br />
+      <label for="about">About You</label>
+      <textarea name="" id="about" cols="50" rows="5"></textarea>
+
+      <br />
+      <input type="button" name="" id="" onclick="" value="Click here" />
+      <!-- when submit button is used the data on form is sent to the URL mentioned in the action attribute of the form element -->
+      <input type="submit" value="Pay Now" />
+      <!-- reset type is used to clear the values in form elements -->
+      <input type="reset" value="Clear" />
+
+      <br />
+    </form>
+  </body>
+</html>
