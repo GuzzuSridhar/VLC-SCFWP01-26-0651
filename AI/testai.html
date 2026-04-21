@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern CSS Calculator UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .calculator-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 2rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        width: 340px;
+        padding: 2rem;
+      }
+
+      .display {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: right;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .history {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        min-height: 1.2rem;
+      }
+
+      .current-value {
+        color: white;
+        font-size: 2.25rem;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+
+      .calc-btn {
+        aspect-ratio: 1 / 1;
+        border-radius: 1rem;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+      }
+
+      .calc-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .calc-btn:active {
+        transform: translateY(0px);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .btn-operator {
+        background: rgba(255, 165, 0, 0.2);
+        color: #ffb84d;
+      }
+
+      .btn-operator:hover {
+        background: rgba(255, 165, 0, 0.3);
+      }
+
+      .btn-equals {
+        background: #ff9f0a;
+        color: white;
+        grid-column: span 2;
+        aspect-ratio: auto;
+      }
+
+      .btn-equals:hover {
+        background: #ffb340;
+      }
+
+      .btn-clear {
+        color: #ff5e5e;
+        background: rgba(255, 94, 94, 0.1);
+      }
+
+      .btn-clear:hover {
+        background: rgba(255, 94, 94, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator-card">
+      <!-- Result Display Section -->
+      <div class="display">
+        <div id="history" class="history"></div>
+        <div id="display" class="current-value">0</div>
+      </div>
+
+      <!-- Buttons Grid -->
+      <div class="grid-container">
+        <button class="calc-btn btn-clear" data-type="clear">AC</button>
+        <button class="calc-btn btn-operator" data-type="toggle">+/-</button>
+        <button class="calc-btn btn-operator" data-type="operator">%</button>
+        <button class="calc-btn btn-operator" data-type="operator">÷</button>
+
+        <button class="calc-btn" data-type="number">7</button>
+        <button class="calc-btn" data-type="number">8</button>
+        <button class="calc-btn" data-type="number">9</button>
+        <button class="calc-btn btn-operator" data-type="operator">×</button>
+
+        <button class="calc-btn" data-type="number">4</button>
+        <button class="calc-btn" data-type="number">5</button>
+        <button class="calc-btn" data-type="number">6</button>
+        <button class="calc-btn btn-operator" data-type="operator">−</button>
+
+        <button class="calc-btn" data-type="number">1</button>
+        <button class="calc-btn" data-type="number">2</button>
+        <button class="calc-btn" data-type="number">3</button>
+        <button class="calc-btn btn-operator" data-type="operator">+</button>
+
+        <button class="calc-btn" data-type="number">0</button>
+        <button class="calc-btn" data-type="decimal">.</button>
+        <button class="calc-btn btn-equals" data-type="equals">=</button>
+      </div>
+    </div>
+
+    <script>
+      const display = document.getElementById("display");
+      const historyDisplay = document.getElementById("history");
+      const buttons = document.querySelectorAll(".calc-btn");
+
+      let currentValue = "0";
+      let firstOperand = null;
+      let operator = null;
+      let waitingForSecondOperand = false;
+
+      function updateDisplay() {
+        display.textContent = currentValue;
+      }
+
+      function handleNumber(num) {
+        if (waitingForSecondOperand) {
+          currentValue = num;
+          waitingForSecondOperand = false;
+        } else {
+          currentValue = currentValue === "0" ? num : currentValue + num;
+        }
+        updateDisplay();
+      }
+
+      function handleDecimal() {
+        if (waitingForSecondOperand) {
+          currentValue = "0.";
+          waitingForSecondOperand = false;
+          updateDisplay();
+          return;
+        }
+        if (!currentValue.includes(".")) {
+          currentValue += ".";
+        }
+        updateDisplay();
+      }
+
+      function handleOperator(nextOperator) {
+        const inputValue = parseFloat(currentValue);
+
+        if (operator && waitingForSecondOperand) {
+          operator = nextOperator;
+          historyDisplay.textContent = `${firstOperand} ${getSymbol(operator)}`;
+          return;
+        }
+
+        if (firstOperand === null) {
+          firstOperand = inputValue;
+        } else if (operator) {
+          const result = calculate(firstOperand, inputValue, operator);
+          currentValue = `${parseFloat(result.toFixed(7))}`;
+          firstOperand = result;
+        }
+
+        waitingForSecondOperand = true;
+        operator = nextOperator;
+        historyDisplay.textContent = `${firstOperand} ${getSymbol(operator)}`;
+        updateDisplay();
+      }
+
+      function getSymbol(op) {
+        const symbols = { "+": "+", "−": "-", "×": "×", "÷": "÷", "%": "%" };
+        return symbols[op] || op;
+      }
+
+      function calculate(first, second, op) {
+        if (op === "+") return first + second;
+        if (op === "−") return first - second;
+        if (op === "×") return first * second;
+        if (op === "÷") return second === 0 ? "Error" : first / second;
+        if (op === "%") return first % second;
+        return second;
+      }
+
+      function handleEquals() {
+        if (operator === null || waitingForSecondOperand) return;
+
+        const inputValue = parseFloat(currentValue);
+        const result = calculate(firstOperand, inputValue, operator);
+
+        historyDisplay.textContent = `${firstOperand} ${getSymbol(operator)} ${inputValue} =`;
+        currentValue = `${parseFloat(result.toFixed(7))}`;
+        firstOperand = null;
+        operator = null;
+        waitingForSecondOperand = false;
+        updateDisplay();
+      }
+
+      function handleClear() {
+        currentValue = "0";
+        firstOperand = null;
+        operator = null;
+        waitingForSecondOperand = false;
+        historyDisplay.textContent = "";
+        updateDisplay();
+      }
+
+      function handleToggle() {
+        currentValue = (parseFloat(currentValue) * -1).toString();
+        updateDisplay();
+      }
+
+      // Click Events
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const type = button.dataset.type;
+          const value = button.textContent;
+
+          switch (type) {
+            case "number":
+              handleNumber(value);
+              break;
+            case "decimal":
+              handleDecimal();
+              break;
+            case "operator":
+              handleOperator(value);
+              break;
+            case "equals":
+              handleEquals();
+              break;
+            case "clear":
+              handleClear();
+              break;
+            case "toggle":
+              handleToggle();
+              break;
+          }
+        });
+      });
+
+      // Keyboard Support
+      document.addEventListener("keydown", (e) => {
+        if (e.key >= "0" && e.key <= "9") handleNumber(e.key);
+        if (e.key === ".") handleDecimal();
+        if (e.key === "=" || e.key === "Enter") handleEquals();
+        if (e.key === "Backspace") {
+          currentValue =
+            currentValue.length > 1 ? currentValue.slice(0, -1) : "0";
+          updateDisplay();
+        }
+        if (e.key === "Escape") handleClear();
+        if (["+", "-", "*", "/"].includes(e.key)) {
+          const map = { "*": "×", "/": "÷", "-": "−", "+": "+" };
+          handleOperator(map[e.key]);
+        }
+      });
+    </script>
+  </body>
+</html>
