@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* group selector (logic of or) */
+      p,
+      span {
+        color: red;
+      }
+
+      p {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet.
+      <!-- the bgcolor is inherited from that parent p element style -->
+      <span
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque,
+        laudantium ipsa consectetur optio necessitatibus corrupti quidem porro
+        nemo illum nam quasi facilis vel voluptates? Sapiente molestiae atque ut
+        consectetur quibusdam.</span
+      >
+    </p>
+    <span>Lorem ipsum dolor sit amet.</span>
+  </body>
+</html>
