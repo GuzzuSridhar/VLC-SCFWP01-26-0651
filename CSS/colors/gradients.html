@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        /* linear gradient */
+        height: 20vh;
+        width: 60%;
+        margin: auto;
+        background-image: linear-gradient(to right, blue 50%, yellow 50%);
+        margin-bottom: 5px;
+        /* 1st property
+        can be degrees of an angle
+        or fixed instruction like
+        to top
+        to bottom
+        to right
+        to left */
+      }
+      .box1 {
+        /* repeating linear gradient */
+        height: 20vh;
+        width: 60%;
+        margin: auto;
+        background-image: repeating-linear-gradient(
+          45deg,
+          blue 0px,
+          yellow 30px,
+          blue 30px,
+          yellow 60px
+        );
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box1"></div>
+  </body>
+</html>
