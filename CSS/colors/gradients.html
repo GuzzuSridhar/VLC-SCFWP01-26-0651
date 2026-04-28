@@ -33,10 +33,38 @@
         );
         margin-bottom: 5px;
       }
+
+      .rad {
+        height: 20vh;
+        width: 60%;
+        margin: auto;
+        /* radial gradient */
+        background-image: radial-gradient(
+          circle,
+          rgb(75, 75, 183) 65%,
+          #db75ed
+        );
+        margin-bottom: 5px;
+      }
+      .radrep {
+        height: 20vh;
+        width: 60%;
+        margin: auto;
+        /* radial gradient */
+        background-image: repeating-radial-gradient(
+          ellipse,
+          rgba(101, 194, 101, 0.652) 0px,
+          green 20px,
+          yellow 20px,
+          yellow 40px
+        );
+      }
     </style>
   </head>
   <body>
     <div class="box"></div>
     <div class="box1"></div>
+    <div class="rad"></div>
+    <div class="radrep"></div>
   </body>
 </html>
