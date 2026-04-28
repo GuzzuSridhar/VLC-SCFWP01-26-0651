@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        /* syntax of decalring a variable
+        --<variable name> */
+        --primarycolor: #f8630c;
+        --secondarycolory: #e52c2c;
+        --padding: 10px;
+      }
+
+      h1 {
+        color: var(--primarycolor);
+        border: 1px solid var(--secondarycolory);
+      }
+      p {
+        /* use the variables using var(<variable name>) */
+        color: var(--primarycolor);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is colored using variable in css</h1>
+    <h1>This is colored using variable in css</h1>
+    <h1>This is colored using variable in css</h1>
+    <h1>This is colored using variable in css</h1>
+    <p>lorem</p>
+  </body>
+</html>
