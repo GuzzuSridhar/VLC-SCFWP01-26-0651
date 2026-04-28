@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      :root {
+        font-size: 32px;
+      }
+
+      .pixel-default {
+        font-size: 16px;
+      }
+      .pixel-em {
+        /* relative to its parent */
+        font-size: 1.5em;
+      }
+      .pixel-rem {
+        /* rem is a relative em to the root (root em) */
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>I am with the default font size</p>
+    <p class="pixel-default">I am with the default font size</p>
+    <p class="pixel-default">
+      <span class="pixel-em">I am with the em font size</span>
+    </p>
+    <p class="pixel-rem">I am with the rem font size</p>
+  </body>
+</html>
