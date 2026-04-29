@@ -5,24 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      :root {
+        --mright: 5px;
+        --imwidth: 15vw;
+        --imheight: 15vw;
+      }
       .box {
-        width: 25vw;
-        height: 25vw;
+        width: var(--imwidth);
+        height: var(--imheight);
         background-color: aqua;
         float: left;
-        margin-right: 10px;
+        margin-right: var(--mright);
+        text-align: center;
+        padding: 0px;
+        border: 1px solid blue;
+      }
+      .box1 {
+        width: var(--imwidth);
+        height: var(--imheight);
+        background-color: aqua;
+        float: right;
+        margin-right: var(--mright);
         text-align: center;
         padding: 0px;
         border: 1px solid blue;
       }
       img {
-        width: 25vw;
-        height: 25vw;
+        width: var(--imwidth);
+        height: var(--imheight);
       }
     </style>
   </head>
   <body>
     <div class="box"><img src="../../HTML/resources/person1.jpg" alt="" /></div>
-    <div class="box"><img src="../../HTML/resources/person2.jpg" alt="" /></div>
+    <div class="box"><img src="../../HTML/resources/person1.jpg" alt="" /></div>
+    <div class="box1">
+      <img src="../../HTML/resources/person2.jpg" alt="" />
+    </div>
+    <div class="box1">
+      <img src="../../HTML/resources/person2.jpg" alt="" />
+    </div>
   </body>
 </html>
