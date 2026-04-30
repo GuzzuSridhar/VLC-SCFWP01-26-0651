@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Layout</title>
+    <style>
+      body {
+        margin: 0;
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "sidebar main"
+          "footer footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+      }
+
+      header {
+        grid-area: header;
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+      }
+
+      aside {
+        grid-area: sidebar;
+        background-color: #e9ecef;
+        padding: 20px;
+        border-right: 1px solid #ccc;
+      }
+
+      main {
+        grid-area: main;
+        padding: 20px;
+      }
+
+      footer {
+        grid-area: footer;
+        background-color: #343a40;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      .content-center {
+        text-align: center;
+      }
+      .content-text {
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Header Section</h1>
+    </header>
+
+    <aside>
+      <p>Sidebar Section</p>
+    </aside>
+
+    <main>
+      <div style="text-align: center">
+        <h2>Welcome to Our Website</h2>
+        <p>We are glad to have you here exploring our grid layout.</p>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </main>
+
+    <footer>
+      <p>Footer Section</p>
+    </footer>
+  </body>
+</html>
