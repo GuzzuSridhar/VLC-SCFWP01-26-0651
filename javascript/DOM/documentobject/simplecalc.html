@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <label for="n1">Enter a Number: </label>
+    <input type="number" id="n1" />
+    <label for="n2">Enter a Number: </label>
+    <input type="number" id="n2" />
+
+    <button id="btnadd" onclick="add()">Add</button>
+    <button id="btndif" onclick="diff()">Subtract</button>
+    <button id="btnpro" onclick="prod()">Multiply</button>
+    <button id="btndiv" onclick="div()">Divide</button>
+
+    <span id="res"></span>
+
+    <script>
+      function add() {
+        let x = document.getElementById("n1").value;
+        let y = document.getElementById("n2").value;
+        document.getElementById("res").innerText = parseInt(x) + parseInt(y);
+      }
+      function diff() {
+        let x = document.getElementById("n1").value;
+        let y = document.getElementById("n2").value;
+        document.getElementById("res").innerText = parseInt(x) - parseInt(y);
+      }
+      function prod() {
+        let x = document.getElementById("n1").value;
+        let y = document.getElementById("n2").value;
+        document.getElementById("res").innerText = parseInt(x) - parseInt(y);
+      }
+      function div() {
+        let x = document.getElementById("n1").value;
+        let y = document.getElementById("n2").value;
+        document.getElementById("res").innerText = parseInt(x) - parseInt(y);
+      }
+    </script>
+  </body>
+</html>

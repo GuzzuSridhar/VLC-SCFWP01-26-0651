@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .anyclass {
+        color: red;
+        background-color: bisque;
+      }
+      .someclass {
+        color: blue;
+        background-color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- assign class to elements -->
+    <h1 id="anyidname">Hello World</h1>
+    <p id="someidname">This is a paragraph</p>
+
+    <!-- change class -->
+    <h2 id="myid" class="someclass">Some text</h2>
+    <p id="mypara" class="anyclass">Some text</p>
+
+    <script>
+      document.getElementById("anyidname").className = "someclass";
+      document.getElementById("someidname").className = "anyclass";
+
+      document.getElementById("myid").className = "anyclass";
+      document.getElementById("mypara").className = "someclass";
+    </script>
+  </body>
+</html>
