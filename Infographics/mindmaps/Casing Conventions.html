@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:S,mm:Q}=window,$=new S.Toolbar;$.attach(Q);const I=$.render();I.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(I)})})()</script><script>((l,U,M,R)=>{const N=l();window.mm=N.Markmap.create("svg#mindmap",(U||N.deriveOptions)(R),M),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("markmap-dark")})(()=>window.markmap,null,{"content":"Programming Naming and Casing Conventions","children":[{"content":"camelCase","children":[{"content":"Format: first word lowercase, subsequent words start with uppercase<br>\nExample: <code>totalAmount</code>, <code>getUserInfo()</code>","children":[],"payload":{"tag":"li","lines":"9,11"}},{"content":"Commonly used for:","children":[{"content":"Variables","children":[],"payload":{"tag":"li","lines":"12,13"}},{"content":"Functions / methods","children":[],"payload":{"tag":"li","lines":"13,14"}}],"payload":{"tag":"li","lines":"11,14"}},{"content":"Languages: Java, JavaScript, TypeScript, C#, Swift","children":[],"payload":{"tag":"li","lines":"14,16"}}],"payload":{"tag":"h3","lines":"8,9"}},{"content":"PascalCase","children":[{"content":"Format: every word starts with uppercase<br>\nExample: <code>CustomerOrder</code>, <code>FileReader</code>","children":[],"payload":{"tag":"li","lines":"19,21"}},{"content":"Commonly used for:","children":[{"content":"Classes","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"Interfaces","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"Structs","children":[],"payload":{"tag":"li","lines":"24,25"}}],"payload":{"tag":"li","lines":"21,25"}},{"content":"Languages: Java, C#, TypeScript, Go (for exported identifiers)","children":[],"payload":{"tag":"li","lines":"25,27"}}],"payload":{"tag":"h3","lines":"18,19"}},{"content":"snake_case","children":[{"content":"Format: lowercase words separated by underscores<br>\nExample: <code>user_name</code>, <code>get_user_info</code>","children":[],"payload":{"tag":"li","lines":"30,32"}},{"content":"Commonly used for:","children":[{"content":"Variables and functions","children":[],"payload":{"tag":"li","lines":"33,34"}}],"payload":{"tag":"li","lines":"32,34"}},{"content":"Languages: Python, Ruby, C, C++, Rust","children":[],"payload":{"tag":"li","lines":"34,36"}}],"payload":{"tag":"h3","lines":"29,30"}},{"content":"SCREAMING_SNAKE_CASE","children":[{"content":"Format: uppercase words separated by underscores<br>\nExample: <code>MAX_SIZE</code>, <code>DEFAULT_PORT</code>","children":[],"payload":{"tag":"li","lines":"39,41"}},{"content":"Commonly used for:","children":[{"content":"Constants","children":[],"payload":{"tag":"li","lines":"42,43"}},{"content":"Environment variables","children":[],"payload":{"tag":"li","lines":"43,44"}}],"payload":{"tag":"li","lines":"41,44"}},{"content":"Languages: C, Python, JavaScript, C++, Java","children":[],"payload":{"tag":"li","lines":"44,46"}}],"payload":{"tag":"h3","lines":"38,39"}},{"content":"kebab-case","children":[{"content":"Format: lowercase words separated by hyphens<br>\nExample: <code>background-color</code>, <code>text-align</code>","children":[],"payload":{"tag":"li","lines":"49,51"}},{"content":"Commonly used for:","children":[{"content":"CSS property names","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"URLs and file names","children":[],"payload":{"tag":"li","lines":"53,54"}}],"payload":{"tag":"li","lines":"51,54"}},{"content":"Languages: HTML, CSS, Web frameworks","children":[],"payload":{"tag":"li","lines":"54,55"}},{"content":"&#x26a0;&#xfe0f; Not valid for identifiers in most programming languages","children":[],"payload":{"tag":"li","lines":"55,57"}}],"payload":{"tag":"h3","lines":"48,49"}},{"content":"Train-Case","children":[{"content":"Format: capitalized words separated by hyphens<br>\nExample: <code>Main-Menu</code>, <code>Error-Handler</code>","children":[],"payload":{"tag":"li","lines":"60,62"}},{"content":"Commonly used for:","children":[{"content":"Documentation or headings","children":[],"payload":{"tag":"li","lines":"63,64"}},{"content":"Configuration labels","children":[],"payload":{"tag":"li","lines":"64,66"}}],"payload":{"tag":"li","lines":"62,66"}}],"payload":{"tag":"h3","lines":"59,60"}},{"content":"flatcase","children":[{"content":"Format: all lowercase with no separators<br>\nExample: <code>username</code>, <code>totalvalue</code>","children":[],"payload":{"tag":"li","lines":"69,71"}},{"content":"Commonly used for:","children":[{"content":"Legacy systems","children":[],"payload":{"tag":"li","lines":"72,73"}},{"content":"Database column names","children":[],"payload":{"tag":"li","lines":"73,74"}}],"payload":{"tag":"li","lines":"71,74"}},{"content":"Less readable; discouraged in modern code","children":[],"payload":{"tag":"li","lines":"74,76"}}],"payload":{"tag":"h3","lines":"68,69"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":1})</script>
+</body>
+</html>
