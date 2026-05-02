@@ -6,17 +6,21 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- create elements with no content -->
-    <h1 id="head"></h1>
-    <p id="content"></p>
+    <!-- create elements with some default content -->
+    <h1 id="head">Welcome</h1>
+    <p id="content">This is the initial text in the paragraph</p>
 
     <script>
       // fetch the content of an element using a variable
       const data = document.getElementById("content");
-      data.innerText = "This is a paragraph infused by JavaScript";
+      // append the text to the element
+      data.innerText =
+        data.innerText + "\n This is a paragraph infused by JavaScript";
+      // alternatively
+      data.innerText += "\n This is a paragraph infused by JavaScript";
 
-      // fetch the content of an element without a variable
-      document.getElementById("head").innerText = "Working with DOM";
+      // update the content of an element without a variable
+      document.getElementById("head").innerText += " to DOM";
     </script>
   </body>
 </html>

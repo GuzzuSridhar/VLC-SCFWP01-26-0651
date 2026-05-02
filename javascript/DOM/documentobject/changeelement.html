@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="h">Changing the Element Type</h1>
+    <div id="container">
+      <p id="p">This is a Paragraph</p>
+    </div>
+
+    <script>
+      // current element in the div
+      console.log(document.getElementById("container").innerHTML);
+      //   change the content of the div
+      document.getElementById("container").innerHTML =
+        "<h2> this is replaced with p </h2>";
+      // current element in the div
+      console.log(document.getElementById("container").innerHTML);
+    </script>
+  </body>
+</html>
