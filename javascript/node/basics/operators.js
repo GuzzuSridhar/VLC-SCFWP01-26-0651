@@ -21,3 +21,32 @@ console.log("the value after multiplying by 2 is:" + (x *= 2));
 console.log("the value after dividing by 3 is:" + (x /= 3));
 console.log("the reminder after dividing by 3 is:" + (x %= 3));
 console.log("-------------------------------------");
+
+// Comparision operators
+console.log("-------------Comparision Operators------------------------");
+console.log("The value of x is: " + x);
+console.log("The value of y is: " + y);
+console.log("x is equal to y: " + (x == y));
+console.log("x is not equal to y: " + (x != y));
+console.log("x is greater than y: " + (x > y));
+console.log("x is less than y: " + (x < y));
+console.log("x is greater than or equal to y: " + (x >= y));
+console.log("x is less than or equal to y: " + (x <= y));
+console.log("-------------------------------------");
+
+// increment and decrement operators
+console.log(
+  "-------------Increment and Decrement Operators------------------------",
+);
+let a = 10;
+console.log("The value of a is: " + a); // 10
+console.log("The value of a++ is: " + a++); // 10
+console.log("The value of a is: " + a); // 11
+console.log("The value of ++a is: " + ++a); //12
+console.log("The value of a-- is: " + a--); //12;
+console.log("The value of a is: " + a); // 11
+console.log("The value of --a is: " + --a); //10
+
+// the post increment / decrement (uses the current value in the expression and then increments / decrements)
+// the pre increment / decrement (increments / decrements value and then value in the expression )
+console.log("-------------------------------------");
