@@ -24,8 +24,15 @@ console.log(res);
 
 console.log("----------Do While Loop----------");
 // do while loop
-let j = 1;
+let j = 1; // loop variable
 do {
   console.log(j);
-  j++;
-} while (j <= 10);
+  j++; // increment of loop variable
+} while (j <= 10); // condition
+
+// for loop
+console.log("----------For Loop----------");
+for (let k = 1; k <= 10; k++) {
+  console.log(k);
+}
+// console.log(k); // no more in scope
