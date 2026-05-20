@@ -22,3 +22,30 @@ console.log("-------------Using Enhanced for loop--------------");
 for (const name of names) {
   console.log(name);
 }
+
+// access KV pairs from array
+const users = [
+  { id: 1, name: "Alex", active: true },
+  { id: 2, name: "John", active: false },
+  { id: 3, name: "Bob", active: true },
+];
+
+// get the user details individually
+console.log("-------------Printing KV pairs (full object)--------------");
+console.log(users[0]);
+console.log(users[1]);
+console.log(users[2]);
+
+console.log("-------------Printing KV pairs (kv)--------------");
+// print only the names of all users individually withot a loop
+console.log(users[0].id + " - " + users[0].name);
+console.log(users[1].id + " - " + users[1].name);
+console.log(users[1].id + " - " + users[1].name);
+
+// print all the names using a for of loop
+console.log(
+  "-------------Printing KV pairs (kv) using for of loop--------------",
+);
+for (const x of users) {
+  console.log(x.id + " - " + x.name);
+}
