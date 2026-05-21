@@ -3,3 +3,6 @@ print fibonocii series till 100 (0 1 1 2 3 5 8 13 21 34..)
 print all odd numbers between 1 and 100
 print all even numbers between 1 and 100
 print all prime numbers between 1 and 100
+
+given a string find the number of vowels in it
+
