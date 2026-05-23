@@ -16,6 +16,9 @@ function divide(x, y) {
 }
 
 // export the functions to be then imported and used in other js files
-module.exports = {
-  add,
-};
+// module.exports = {
+//   add,
+// };
+
+module.exports.add = add;
+module.exports.a = add;
