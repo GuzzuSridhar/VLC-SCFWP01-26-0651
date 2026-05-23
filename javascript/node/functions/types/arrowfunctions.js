@@ -36,14 +36,12 @@ console.log(calculate(10, 20, 30, 40));
 const up = (str) => str.toUpperCase();
 console.log(up("hello"));
 
+// arrow function with arrays
 const salaries = [2000, 3000, 4000, 5000];
 const salIncrement = salaries.map((salary) => salary + 0);
 console.log(salIncrement);
 
-const totalSalarySpend = salaries.reduce(
-  (total, salary) => total + salary,
-  1000,
-);
+const totalSalarySpend = salaries.reduce((total, salary) => total + salary, 0);
 console.log(totalSalarySpend);
 
 const filterSalaries = salaries.filter((salary) => salary > 3000);
