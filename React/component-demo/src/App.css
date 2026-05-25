@@ -1,0 +1,64 @@
+.primary-btn{
+    background-color: #3828e5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    
+}
+.primary-btn:hover{
+    background-color: #0056b3;
+}
+
+.secondary-btn{
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.secondary-btn:hover{
+    background-color: #545b62;
+}
+
+.danger-btn{
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.danger-btn:hover{
+    background-color: #c82333;
+}
+
+/* Styles for the dynamic button */
+.btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 10px;
+}
+
+.primary {
+    background-color: #3828e5;
+    color: white;
+}
+.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.danger {
+    background-color: #dc3545;
+    color: white;
+}
