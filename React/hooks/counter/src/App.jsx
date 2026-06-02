@@ -1,0 +1,12 @@
+import "./App.css";
+import CounterDemo from "./components/CounterDemo";
+
+function App() {
+  return (
+    <>
+      <CounterDemo />
+    </>
+  );
+}
+
+export default App;
