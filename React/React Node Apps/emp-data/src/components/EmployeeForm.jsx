@@ -1,0 +1,112 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+function EmployeeForm() {
+  const [employee, setEmployee] = useState({
+    empId: "",
+    name: "",
+    department: "",
+    salary: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/employees", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(employee),
+      });
+      if (response.ok) {
+        alert("Employee saved successfully!");
+        setEmployee({
+          empId: "",
+          name: "",
+          department: "",
+          salary: "",
+        });
+      } else {
+        alert("Failed to save employee. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error saving employee:", error);
+      alert("An error occurred while saving the employee. Please try again.");
+    }
+  };
+
+  return (
+    <>
+      <div>
+        <h1>Employee Data Entry Form</h1>
+
+        <form onSubmit={handleSubmit}>
+          {/* input for the empid */}
+          <div>
+            <label htmlFor="">Employee ID</label>
+            <input
+              type="text"
+              id="empId"
+              name="empId"
+              value={employee.empId}
+              onChange={handleChange}
+            />
+          </div>
+          {/* input for emp name */}
+          <div>
+            <label htmlFor="">Employee Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={employee.name}
+              onChange={handleChange}
+            />
+          </div>
+          {/* input for department */}
+          <div>
+            <label htmlFor="">Department</label>
+            <input
+              type="text"
+              id="dept"
+              name="department"
+              value={employee.department}
+              onChange={handleChange}
+            />
+          </div>
+          {/* input for salary */}
+          <div>
+            <label htmlFor="">Salary</label>
+            <input
+              type="number"
+              id="salary"
+              name="salary"
+              value={employee.salary}
+              onChange={handleChange}
+            />
+          </div>
+          {/* submit button */}
+          <div>
+            <button type="submit">Save Employee</button>
+          </div>
+          <div>
+            <Link to="/emplist">
+              <button type="submit">View Employees</button>
+            </Link>
+          </div>
+        </form>
+      </div>
+    </>
+  );
+}
+
+export default EmployeeForm;
