@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./EmployeeForm.css";
 
 function EmployeeForm() {
   const [employee, setEmployee] = useState({
@@ -46,13 +47,13 @@ function EmployeeForm() {
 
   return (
     <>
-      <div>
+      <div className="form-container">
         <h1>Employee Data Entry Form</h1>
 
         <form onSubmit={handleSubmit}>
           {/* input for the empid */}
-          <div>
-            <label htmlFor="">Employee ID</label>
+          <div className="form-group">
+            <label htmlFor="empId">Employee ID</label>
             <input
               type="text"
               id="empId"
@@ -62,8 +63,8 @@ function EmployeeForm() {
             />
           </div>
           {/* input for emp name */}
-          <div>
-            <label htmlFor="">Employee Name</label>
+          <div className="form-group">
+            <label htmlFor="name">Employee Name</label>
             <input
               type="text"
               id="name"
@@ -73,8 +74,8 @@ function EmployeeForm() {
             />
           </div>
           {/* input for department */}
-          <div>
-            <label htmlFor="">Department</label>
+          <div className="form-group">
+            <label htmlFor="dept">Department</label>
             <input
               type="text"
               id="dept"
@@ -84,8 +85,8 @@ function EmployeeForm() {
             />
           </div>
           {/* input for salary */}
-          <div>
-            <label htmlFor="">Salary</label>
+          <div className="form-group">
+            <label htmlFor="salary">Salary</label>
             <input
               type="number"
               id="salary"
@@ -95,12 +96,14 @@ function EmployeeForm() {
             />
           </div>
           {/* submit button */}
-          <div>
-            <button type="submit">Save Employee</button>
-          </div>
-          <div>
+          <div className="button-group">
+            <button type="submit" className="submit-btn">
+              Save Employee
+            </button>
             <Link to="/emplist">
-              <button type="submit">View Employees</button>
+              <button type="button" className="view-btn">
+                View Employees
+              </button>
             </Link>
           </div>
         </form>

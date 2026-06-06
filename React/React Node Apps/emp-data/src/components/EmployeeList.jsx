@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "./EmployeeList.css";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
@@ -26,31 +28,36 @@ function EmployeeList() {
   }
 
   return (
-    <>
-      <div>
+    <div className="list-container">
+      <header>
         <h1>Employee List</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Employee ID</th>
-              <th>Name</th>
-              <th>Department</th>
-              <th>Salary</th>
+      </header>
+      <table className="employee-table">
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          {employees.map((employee) => (
+            <tr key={employee.empId}>
+              <td>{employee.empId}</td>
+              <td>{employee.name}</td>
+              <td>{employee.department}</td>
+              <td>${Number(employee.salary).toLocaleString()}</td>
             </tr>
-          </thead>
-          <tbody>
-            {employees.map((employee) => (
-              <tr>
-                <td>{employee.empId}</td>
-                <td>{employee.name}</td>
-                <td>{employee.department}</td>
-                <td>{employee.salary}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          ))}
+        </tbody>
+      </table>
+      <div className="actions">
+        <Link to="/" className="add-btn">
+          Add New Employee
+        </Link>
       </div>
-    </>
+    </div>
   );
 }
 
