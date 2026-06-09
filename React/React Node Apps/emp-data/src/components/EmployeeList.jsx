@@ -40,6 +40,7 @@ function EmployeeList() {
             <th>Name</th>
             <th>Department</th>
             <th>Salary</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -49,6 +50,12 @@ function EmployeeList() {
               <td>{employee.name}</td>
               <td>{employee.department}</td>
               <td>${Number(employee.salary).toLocaleString()}</td>
+              <td>
+                <Link to={`/edit/${employee.empId}`}>
+                  <button>Edit</button>
+                </Link>
+                <button>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>

@@ -65,3 +65,50 @@ app.get("/employees", (req, res) => {
     res.json(result);
   });
 });
+
+// get single employee
+app.get("/employees/:id", (req, res) => {
+  const empId = req.params.id;
+
+  const sql = "SELECT * FROM employees WHERE empId = ?";
+
+  connection.query(sql, [empId], (err, result) => {
+    if (err) {
+      return res.status(500).json({
+        success: false,
+        message: "Database Error",
+      });
+    }
+    res.json(result[0]);
+  });
+});
+
+// endpoint for updating employee
+app.put("/employees/:id", (req, res) => {
+  const empId = req.params.id;
+  const { name, department, salary } = req.body;
+  const sql =
+    "UPDATE employees SET name = ?, department = ?, salary = ? WHERE empId = ?";
+
+  connection.query(sql, [name, department, salary, empId], (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({
+        success: false,
+        message: "Database Error",
+      });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Employee not found",
+      });
+    }
+    return res.status(200).json({
+      success: true,
+      message: "Employee updated successfully",
+    });
+  });
+});
+
+// endpoint for deleting employee
