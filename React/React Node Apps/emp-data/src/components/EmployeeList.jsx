@@ -16,6 +16,7 @@ function EmployeeList() {
     try {
       const response = await fetch("http://localhost:3000/employees");
       const data = await response.json();
+      console.log(data);
       setEmployees(data);
     } catch (error) {
       console.error("Error fetching employees:", error);
