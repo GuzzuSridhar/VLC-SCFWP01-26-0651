@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./EmployeeForm.css";
+import SaveIcon from "@mui/icons-material/Save";
+import ListIcon from "@mui/icons-material/List";
 
 function EmployeeForm() {
   const [employee, setEmployee] = useState({
@@ -98,11 +100,13 @@ function EmployeeForm() {
           {/* submit button */}
           <div className="button-group">
             <button type="submit" className="submit-btn">
-              Save Employee
+              <SaveIcon sx={{ verticalAlign: "middle", mr: 0.5 }} /> Save
+              Employee
             </button>
             <Link to="/emplist">
               <button type="button" className="view-btn">
-                View Employees
+                <ListIcon sx={{ verticalAlign: "middle", mr: 0.5 }} /> View
+                Employees
               </button>
             </Link>
           </div>

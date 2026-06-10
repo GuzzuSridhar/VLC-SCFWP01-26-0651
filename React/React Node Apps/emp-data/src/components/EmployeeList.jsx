@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./EmployeeList.css";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import AddIcon from "@mui/icons-material/Add";
+
+// npm install @mui/icons-material @mui/material
+// npm install @emotion/react @emotion/styled
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
@@ -24,9 +30,29 @@ function EmployeeList() {
       setLoading(false);
     }
   };
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
+  // delete employee
+  const deleteEmployee = async (empId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this employee?",
+    );
+    if (confirmDelete) {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/employees/${empId}`,
+          {
+            method: "DELETE",
+          },
+        );
+        fetchEmployees();
+      } catch (error) {
+        console.error("Error deleting employee:", error);
+      }
+    }
+  };
 
   return (
     <div className="list-container">
@@ -52,9 +78,11 @@ function EmployeeList() {
               <td>${Number(employee.salary).toLocaleString()}</td>
               <td>
                 <Link to={`/edit/${employee.empId}`}>
-                  <button>Edit</button>
+                  <EditIcon />
                 </Link>
-                <button>Delete</button>
+                <button onClick={() => deleteEmployee(employee.empId)}>
+                  <DeleteIcon />
+                </button>
               </td>
             </tr>
           ))}
@@ -62,7 +90,7 @@ function EmployeeList() {
       </table>
       <div className="actions">
         <Link to="/" className="add-btn">
-          Add New Employee
+          <AddIcon sx={{ verticalAlign: "middle", mr: 0.5 }} /> Add New Employee
         </Link>
       </div>
     </div>

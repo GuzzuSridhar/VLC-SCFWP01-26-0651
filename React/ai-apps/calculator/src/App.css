@@ -1,0 +1,110 @@
+/* Center the calculator on the page */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Calculator container */
+.calculator {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 320px;
+}
+
+/* Heading */
+.calculator h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Display */
+.calculator input {
+  width: 100%;
+  box-sizing: border-box;
+
+  height: 60px;
+  font-size: 24px;
+  text-align: right;
+
+  padding: 10px;
+  margin-bottom: 15px;
+
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Memory text */
+.memory {
+  text-align: right;
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Button rows */
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.button-row button,
+.memory-button {
+  flex: 1;
+
+  height: 55px;
+  font-size: 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  background-color: #e0e0e0;
+
+  transition: background-color 0.2s;
+}
+
+.button-row button:hover,
+.memory-button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Equals button */
+.equals {
+  background-color: #4caf50 !important;
+  color: white;
+}
+
+.equals:hover {
+  background-color: #43a047 !important;
+}
+
+/* Clear button */
+.clear {
+  background-color: #f44336 !important;
+  color: white;
+}
+
+.clear:hover {
+  background-color: #e53935 !important;
+}
+
+/* Memory clear button */
+.memory-button {
+  width: 100%;
+  background-color: #2196f3;
+  color: white;
+}
+
+.memory-button:hover {
+  background-color: #1e88e5;
+}

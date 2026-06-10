@@ -112,3 +112,25 @@ app.put("/employees/:id", (req, res) => {
 });
 
 // endpoint for deleting employee
+app.delete("/employees/:id", (req, res) => {
+  const empId = req.params.id;
+
+  connection.query(
+    "delete from employees where empId = ?",
+    [empId],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({
+          success: false,
+          message: "Database Error",
+        });
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: "Employee deleted successfully",
+      });
+    },
+  );
+});
