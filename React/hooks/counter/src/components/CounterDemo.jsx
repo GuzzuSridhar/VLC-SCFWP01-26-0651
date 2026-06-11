@@ -4,7 +4,12 @@ function CounterDemo() {
   const [a, setA] = useState(0);
   return (
     <>
-      <button type="button" onClick={() => setA((CurrCount) => CurrCount + 1)}>
+      <button
+        type="button"
+        onClick={() => {
+          setA((CurrCount) => CurrCount + 1);
+        }}
+      >
         {a}
       </button>
     </>
