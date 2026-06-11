@@ -7,6 +7,7 @@ function CounterDemo() {
       <button
         type="button"
         onClick={() => {
+          debugger;
           setA((CurrCount) => CurrCount + 1);
         }}
       >
