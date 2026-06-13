@@ -5,7 +5,7 @@ const Box = ({ text }) => {
     <div
       style={{
         padding: "20px",
-        background: "blue",
+        background: "#0707f8",
         color: "white",
         borderRadius: "30px",
         minWidth: "100px",
@@ -21,17 +21,17 @@ function Cards() {
   return (
     <>
       <FlexBox
-        direction="column"
+        direction="row"
         justify="center"
         align="center"
         wrap="nowrap"
-        gap="10px"
+        gap="50px"
         padding="10px"
-        background="white"
+        background="#fff"
         borderRadius="30px"
-        border="1px solid blue"
-        width="auto"
-        height="10vh"
+        // border="1px solid blue"
+        width="75%"
+        height="auto"
       >
         <Box text="Card 1" />
         <Box text="Card 2" />
