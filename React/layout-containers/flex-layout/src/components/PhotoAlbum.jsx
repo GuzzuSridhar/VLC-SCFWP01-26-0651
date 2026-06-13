@@ -7,7 +7,7 @@ const PhotoAlbum = ({ photos = [] }) => {
         <FlexBox
           key={photo.id}
           direction="column"
-          basis="27%"
+          basis="30%"
           grow={0}
           shrink={0}
           maxWidth="27px"
@@ -22,7 +22,7 @@ const PhotoAlbum = ({ photos = [] }) => {
             style={{
               width: "100%",
               height: "220px",
-              borderRadius: "22px",
+              borderRadius: "29px",
               display: "block",
             }}
           />

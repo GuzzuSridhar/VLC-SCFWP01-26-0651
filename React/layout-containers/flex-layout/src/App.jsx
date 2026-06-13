@@ -1,5 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import Cards from "./components/Cards";
+import ContactForm from "./components/ContactForm";
 import FlexBox from "./components/containers/FlexBox";
+import NavBar from "./components/NavBar";
 import PhotoAlbum from "./components/PhotoAlbum";
 
 function App() {
@@ -85,7 +88,7 @@ function App() {
 
       {/* flex photo album demo */}
 
-      <FlexBox
+      {/* <FlexBox
         direction="column"
         height="90vh"
         width="75%"
@@ -100,6 +103,31 @@ function App() {
       >
         <h1>Flex Photo Album Demo</h1>
         <PhotoAlbum photos={photos} />
+      </FlexBox> */}
+
+      {/* Contact Form Demo */}
+      {/* <FlexBox
+        direction="column"
+        height="90vh"
+        width="75%"
+        justify="center"
+        align="center"
+        background="#EDEFF0"
+        margin="0 auto"
+      >
+        <ContactForm />
+      </FlexBox> */}
+
+      {/* Router implemented with all pages */}
+      <FlexBox direction="column" height="90vh">
+        <NavBar />
+        <FlexBox grow={1} padding="25px" justify="center" align="center">
+          <Routes>
+            <Route path="/" element={<ContactForm />} />
+            <Route path="/gallery" element={<PhotoAlbum photos={photos} />} />
+            <Route path="/cards" element={<Cards />} />
+          </Routes>
+        </FlexBox>
       </FlexBox>
     </>
   );
