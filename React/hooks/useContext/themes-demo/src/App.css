@@ -1,0 +1,21 @@
+.app {
+  transition: all 0.3s ease;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light p {
+  color: rgb(57, 15, 227);
+}
+
+.dark p {
+  color: rgb(179, 228, 95);
+}
