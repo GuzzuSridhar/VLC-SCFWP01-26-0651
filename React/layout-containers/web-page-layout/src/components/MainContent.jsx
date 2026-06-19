@@ -12,7 +12,7 @@ function MainContent() {
       direction="column"
       gap="20px"
       padding="20px"
-      background="#e7eaf0"
+      // background="#e7eaf0"
       grow={1}
     >
       <Routes>

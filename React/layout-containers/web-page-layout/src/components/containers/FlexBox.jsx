@@ -20,7 +20,8 @@ const FlexBox = ({
   gap = "0px",
 
   //extra Styiling
-  background = "transparent",
+  // background = "transparent",
+  background,
   border = "none",
   borderRadius = "0px",
   style = {},

@@ -7,8 +7,8 @@ function SideBar() {
       direction="column"
       gap="15px"
       padding="20px"
-      background="#2563eb"
-      style={{ color: "white" }}
+      // background="#2563eb"
+      // style={{ color: "white" }}
     >
       <h3>Menu</h3>
       <span>
