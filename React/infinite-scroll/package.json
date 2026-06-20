@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-infinite-scroll-component": "^7.2.1"
+    "react-infinite-scroll-component": "^7.2.1",
+    "react-window": "^2.2.7",
+    "react-window-infinite-loader": "^2.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
