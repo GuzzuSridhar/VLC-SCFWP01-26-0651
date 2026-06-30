@@ -12,6 +12,7 @@ var cust = "John";
 console.log(cust);
 cust = "Alex";
 console.log(cust);
+console.log(typeof cust);
 //cust = 90; // compile time error
 //console.log(cust)
 var sal = 9999;
