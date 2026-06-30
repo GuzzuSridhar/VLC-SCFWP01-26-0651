@@ -3,6 +3,11 @@
 // tsc <filename>.ts --> compiles ts file to js file
 // node <filename>.js --> runs js file
 // tsc -w <filename>.ts --> watches ts file for changes and compiles it
+//  when running the ts files, they are actually converted to JS
+// So in node, we can run the js files
+// but browsers understand html, css, and js
+// JS can run on node runtime(v8 engine)
+// TS can run on its own compiler
 var cust = "John";
 console.log(cust);
 cust = "Alex";
@@ -17,8 +22,4 @@ var isActive = true;
 console.log(isActive);
 //isActive = "Hello"; // compile time error
 //console.log(isActive)
-//  when running the ts files, they are actually converted to JS
-// So in node, we can run the js files
-// but browsers understand html, css, and js
-// JS can run on node runtime(v8 engine)
-// TS can run on its own compiler
+//console.log(isActive)
