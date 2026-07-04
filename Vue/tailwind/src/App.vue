@@ -1,7 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Test from './components/Test.vue';
+import UserCard from './components/UserCard.vue';
+
 </script>
 
 <template>
-  <HelloWorld />
+  <UserCard />
+  <Test />
 </template>
