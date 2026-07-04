@@ -5,8 +5,11 @@
 
 
 <!-- script tag is applied to the entire app and not the component -->
-<style>
+<style scoped>
 h2{
   color: blue;
+}
+p{
+    color: blue;
 }
 </style>

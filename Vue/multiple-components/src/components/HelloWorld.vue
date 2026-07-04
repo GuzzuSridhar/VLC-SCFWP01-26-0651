@@ -4,7 +4,7 @@
 </template>
 
 /* added scoped to make the style only apply to this component */
-<style scoped>
+<style scoped >
 p{
   color: red;
 }
