@@ -1,7 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import ButtonBs from './components/Button-Bs.vue';
+import NavBarBs from "./components/NavBar-Bs.vue"
+
 </script>
 
 <template>
-  <HelloWorld />
+  <NavBarBs />
+  <ButtonBs />
 </template>
