@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "gsc": "ng g c",
+    "gsfc": "ng g c -t -s"
   },
   "private": true,
   "packageManager": "npm@11.12.1",
