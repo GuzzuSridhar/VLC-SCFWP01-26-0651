@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
     color: blue;
   }`,
 })
+// export default class Test {}
 export class Test {}
 
 // creation of a SFC component
