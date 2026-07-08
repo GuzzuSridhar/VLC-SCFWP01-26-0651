@@ -7,3 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './welcome.css',
 })
 export class Welcome {}
+
+
+// create a component with seperaration of concerns
+// ng generate component <Component>
+// ng g c <Component>
